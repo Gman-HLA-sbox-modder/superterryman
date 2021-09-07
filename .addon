@@ -1,4 +1,18 @@
 {
+    "name": "super-terry-man",
     "sharedassets": "*.*",
-    "type": "game"
+    
+    "depends": 
+    [
+		"base"
+    ],
+    
+    "gamemodes":
+    [
+        {
+         "name": "super-terry-man",
+         "title": "Super Terry Man",
+         "description": "A platforming game"
+        }
+    ]
 }

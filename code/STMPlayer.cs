@@ -63,11 +63,19 @@ partial class STMPlayer : Player
 			ActiveChild = Input.ActiveChild;
 		}
 	}
+	
+	public override void StartTouch( Entity other )
+	{
+		if ( other is CollectBase collectable )
+		{
+			collectable.OnCarryStart( this );
+		}
+	}
 
 	public override void OnKilled()
 	{
 		base.OnKilled();
-
+		EnableAllCollisions = false;
 		EnableDrawing = false;
 	}
 }
