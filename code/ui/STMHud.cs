@@ -10,6 +10,8 @@ public partial class STMHud : Sandbox.HudEntity<RootPanel>
 	{
 		if ( IsClient )
 		{
+			RootPanel.AddChild<CoinTracker>();
+			
 			RootPanel.AddChild<NameTags>();
 			RootPanel.AddChild<ChatBox>();
 			RootPanel.AddChild<KillFeed>();

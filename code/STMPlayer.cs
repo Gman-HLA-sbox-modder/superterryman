@@ -9,6 +9,8 @@ partial class STMPlayer : Player
 	private bool CanDoubleJump = true;
 	private TimeSince timeSinceJump;
 	private int DoubleJumpHeight = 425;
+
+	public int CollectedCoins;
 	
 	public void InitialSpawn()
 	{
@@ -63,6 +65,12 @@ partial class STMPlayer : Player
 			ActiveChild = Input.ActiveChild;
 		}
 	}
+
+	public void AddCoin( int amount )
+	{
+		CollectedCoins += amount;
+	}
+	
 	
 	public override void StartTouch( Entity other )
 	{

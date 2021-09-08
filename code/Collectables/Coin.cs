@@ -16,6 +16,17 @@ partial class Coin : CollectBase
 	public override void OnCarryStart( Entity carrier )
 	{
 		base.OnCarryStart( carrier );
+
+		if ( carrier is STMPlayer player )
+		{
+			player.PlaySound( "coin_pickup" );
+			player.AddCoin( 1 );
+			using ( Prediction.Off() )
+			{
+				CoinTracker.UpdateTracker( To.Single( player.GetClientOwner() ), player.CollectedCoins );
+			}
+		}
+		
 		Delete();
 	}
 }
